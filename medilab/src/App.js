@@ -1,31 +1,49 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import routes from "./routes";
 import withTracker from "./withTracker";
-
+import PrivateRoots from "./layouts/privateRoots";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./shards-dashboard/styles/shards-dashboards.1.1.0.min.css";
+import Login from "./components/components-overview/login";
 
-export default () => (
+export default ()=> {
+  debugger
+  const [isAuthenticated,setIsAuthenticated] = React.useState(localStorage.getItem("isAuthenticated"))
+  
+React.useEffect(()=>{
+  setIsAuthenticated(localStorage.getItem("isAuthenticated"))
+},[isAuthenticated])
+
+  return(
+
   <Router basename={process.env.REACT_APP_BASENAME || ""}>
-    <div>
+   
+    <Routes>
+   <Route path='/login' element={
+                <Login/> } />
+
+   
+   
       {routes.map((route, index) => {
         return (
           <Route
             key={index}
             path={route.path}
             exact={route.exact}
-            component={withTracker(props => {
-              return (
-                <route.layout {...props}>
-                  <route.component {...props} />
+            element={
+              <PrivateRoots isAuthenticated={isAuthenticated}>
+                <route.layout {...route}>
+                  <route.component {...route} />
                 </route.layout>
-              );
-            })}
+                </PrivateRoots>
+            }
           />
         );
       })}
-    </div>
+       
+   
+    </Routes>
   </Router>
-);
+)};
