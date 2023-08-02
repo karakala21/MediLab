@@ -10,11 +10,7 @@ import Login from "./components/components-overview/login";
 
 export default ()=> {
   debugger
-  const [isAuthenticated,setIsAuthenticated] = React.useState(localStorage.getItem("isAuthenticated"))
   
-React.useEffect(()=>{
-  setIsAuthenticated(localStorage.getItem("isAuthenticated"))
-},[isAuthenticated])
 
   return(
 
@@ -33,7 +29,7 @@ React.useEffect(()=>{
             path={route.path}
             exact={route.exact}
             element={
-              <PrivateRoots isAuthenticated={isAuthenticated}>
+              <PrivateRoots >
                 <route.layout {...route}>
                   <route.component {...route} />
                 </route.layout>
