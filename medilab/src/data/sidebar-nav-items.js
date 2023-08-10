@@ -1,40 +1,35 @@
 export default function() {
   return [
     {
-      title: "Blog Dashboard",
-      to: "/blog-overview",
-      htmlBefore: '<i class="material-icons">edit</i>',
+      title: "Dashboard",
+      to: "/employeeDashboard",
+      htmlBefore: '<i class="material-icons">dashboard</i>',
       htmlAfter: ""
     },
     {
-      title: "Blog Posts",
-      htmlBefore: '<i class="material-icons">vertical_split</i>',
-      to: "/blog-posts",
+      title: "view Test Details",
+      htmlBefore: '<i class="material-icons">visibility</i>',
+      to: "/viewTests",
     },
     {
-      title: "Add New Post",
+      title: "Book Appointment",
       htmlBefore: '<i class="material-icons">note_add</i>',
-      to: "/add-new-post",
+      to: "/employee-book-appointment",
     },
     {
-      title: "Forms & Components",
-      htmlBefore: '<i class="material-icons">view_module</i>',
-      to: "/components-overview",
+      title: "Appointment History",
+      htmlBefore: '<i class="material-icons">description</i>',
+      to: "/employee-appointment-history",
     },
     {
-      title: "Tables",
-      htmlBefore: '<i class="material-icons">table_chart</i>',
-      to: "/tables",
+      title: "Search",
+      htmlBefore: '<i class="material-icons">search</i>',
+      to: "/patient-list",
     },
     {
-      title: "User Profile",
+      title: "View medical Reports",
       htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-profile-lite",
-    },
-    {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors",
+      to: "/view-medical-reports",
     }
   ];
 }

@@ -2,57 +2,93 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 // Layout Types
-import { DefaultLayout } from "./layouts";
+import { DefaultLayout } from "./layouts/index";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import ADashboardOverview from "./views/Admin/AdminDashboard";
+import AdminUserProfileLite from "./views/Admin/AdminUserProfileLite";
+import AddNewTest from "./views/Admin/AddNewTest";
+import Manageemployee from "./views/Admin/Manageemployee";
+import Addemployee from "./views/Admin/Addemployee";
+import ManageTests from "./views/Admin/ManageTests";
+import employeeDashboard from "./views/Employee/EmployeeDashboard";
+import UserProfileLite from "./views/Employee/ViewMedicalReport";
+import AddNewApp from "./views/Employee/Employee-book-appointment";
+import ComponentsOverview from "./views/Employee/Emplyee-appointment-history";
+import Tables from "./views/Employee/Search";
+import ViewTests from "./views/Employee/ViewTests";
 
 export default [
   {
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Navigate to="/blog-overview" />
+    component: () => <Navigate to="/login" />
   },
   {
-    path: "/blog-overview",
+    path: "/AdminDashboard",
     layout: DefaultLayout,
-    component: BlogOverview
+    component: ADashboardOverview
   },
   {
-    path: "/user-profile-lite",
+    path: "/admin-user-profile-lite",
+    layout: DefaultLayout,
+    component:AdminUserProfileLite
+  },
+  {
+    path: "/add-new-test",
+    layout: DefaultLayout,
+    component: AddNewTest
+  },
+  {
+    path: "/manage-employee",
+    layout: DefaultLayout,
+    component: Manageemployee
+  },
+  {
+    path: "/add-employee",
+    layout: DefaultLayout,
+    component: Addemployee
+  },
+  {
+    path: "/ManageTests",
+    layout: DefaultLayout,
+    component: ManageTests
+  },
+  {
+    path: "/employee",
+    exact: true,
+    layout: DefaultLayout,
+    component: () => <Navigate to="/employeeDashboard" />
+  },
+  {
+    path: "/employeeDashboard",
+    layout: DefaultLayout,
+    component: employeeDashboard
+  },
+  {
+    path: "/view-medical-reports",
     layout: DefaultLayout,
     component: UserProfileLite
   },
   {
-    path: "/add-new-post",
+    path: "/employee-book-appointment",
     layout: DefaultLayout,
-    component: AddNewPost
+    component: AddNewApp
   },
   {
-    path: "/errors",
-    layout: DefaultLayout,
-    component: Errors
-  },
-  {
-    path: "/components-overview",
+    path: "/employee-appointment-history",
     layout: DefaultLayout,
     component: ComponentsOverview
   },
   {
-    path: "/tables",
+    path: "/patient-list",
     layout: DefaultLayout,
     component: Tables
   },
   {
-    path: "/blog-posts",
+    path: "/viewTests",
     layout: DefaultLayout,
-    component: BlogPosts
+    component: ViewTests
   }
 ];

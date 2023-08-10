@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+#layout{
+  height: 80vh;
+}
+.cardcontent{
+  display: flex;
+}
+.title{
+  background-color: aqua;
+  height:130px;
+  width: 30%;
+  margin:20px;
+  padding:20px;
+  padding-top: 45px;
+  justify-content: center;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: azure;
+}
+.title:hover{
+  text-decoration: none;
+  color: azure;
+  box-sizing: border-box;
+
+}
+#card1:hover{
+  background-color:rgb(255, 140, 0);
+}
+#card1{
+  background-color:orange;
+  box-shadow: black solid 5px;
+  border-radius:10px;
+}
+#card3:hover{
+  background-color:rgb(0, 120, 212);
+}
+#card3{
+  background-color:rgb(0, 170, 255);
+  box-shadow: black solid 5px;
+  border-radius:10px;
+}
+#card2:hover{
+  background-color:rgb(0, 130, 13);
+}
+#card2{
+  background-color:rgb(3, 158, 3);
+  box-shadow: black solid 5px;
+  border-radius:10px;
+}

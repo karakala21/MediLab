@@ -26,11 +26,10 @@ export default class UserActions extends React.Component {
       visible: !this.state.visible
     });
   }
-
- logout(){
-  localStorage.removeItem("isAuthenticated")
-  localStorage.removeItem('user')
-}
+  logout(){
+    localStorage.removeItem("isAuthenticated")
+    localStorage.removeItem('user')
+  }
 
   render() {
     return (
@@ -38,17 +37,24 @@ export default class UserActions extends React.Component {
         <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
           <img
             className="user-avatar rounded-circle mr-2"
-            src={require("./../../../../images/avatars/0.jpg")}
+            src={require("./../../../../images/avatars/0.png")}
             alt="User Avatar"
           />{" "}
-          <span className="d-none d-md-inline-block">Sierra Brooks</span>
+          <span className="d-none d-md-inline-block" style={{fontWeight:"bold",color:"black"}}>Admin</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
-          <DropdownItem tag={Link} to="/employee-profile">
+          <DropdownItem tag={Link} to="/admin-user-profile-lite">
             <i className="material-icons">&#xE7FD;</i> Profile
           </DropdownItem>
-          <DropdownItem tag={Link} to="/" className="logout text-danger" onClick={this.logout}>
-            <i className="material-icons text-danger">&#xE879;</i> Logout
+          <DropdownItem tag={Link} to="/admin-user-profile-lite">
+            <i className="material-icons">&#xE8B8;</i> Edit Profile
+          </DropdownItem>
+          <DropdownItem tag={Link} to="/AdminDashboard">
+            <i className="material-icons">&#xE2C7;</i> Overview
+          </DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem tag={Link} to="/" className="text-danger" onClick={this.logout}>
+            <a href="" class="text-danger" style={{textDecoration:"none",fontWeight:"normal"}}><i className="material-icons text-danger">&#xE879;</i> Logout</a>
           </DropdownItem>
         </Collapse>
       </NavItem>

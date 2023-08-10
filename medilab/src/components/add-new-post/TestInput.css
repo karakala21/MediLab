@@ -1,0 +1,36 @@
+.label{
+  padding: 10px;
+  margin-right: 5%;
+  color: black;
+}
+.Title{
+    width: 80%;
+    height: 2.5em;
+    letter-spacing: 0.5px;
+}
+.textarea{
+    margin-left: 12%;
+    margin-top: -3.5%;
+    width: 80%;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    padding:5px 10px 5px 10px;
+}
+input[type=text],[type=number]
+{
+    padding: 10px;
+}
+
+.button
+{
+  width: 70px;
+  font-size: medium;
+  border-radius: 7px;
+  padding: 5px;
+  margin-top: 20px;
+  background-color:#228dff;
+  border: none;
+  color: azure;
+}
+

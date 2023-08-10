@@ -4,14 +4,14 @@ import Routes from '../routes';
 export default function PrivateRoots({children,...rest}) {
     debugger
     const [isAuthenticated,setIsAuthenticated] = React.useState(localStorage.getItem("isAuthenticated"))
-  
+
 React.useEffect(()=>{
   setIsAuthenticated(localStorage.getItem("isAuthenticated"))
 },[isAuthenticated])
     return (
-        
-         
-              isAuthenticated
+
+
+              isAuthenticated==1
                 ? (
                   children
                 ) : (
@@ -20,7 +20,7 @@ React.useEffect(()=>{
                     replace
                   />
                 )
-          
-        
+
+
       );
 }

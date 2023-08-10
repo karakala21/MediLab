@@ -1,0 +1,22 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+td, th {
+  border: 1px solid #b5b5b5;
+  text-align: left;
+  padding: 10px 8px 10px 8px;
+  color: black;
+}
+
+tr:hover{
+  background-color: gainsboro;
+}
+th{
+  background-color:#4ea3fe;
+  color: white;
+}
