@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Card, CardBody } from "shards-react";
 import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col,Button,ButtonGroup } from "shards-react"
 import './ManageTests.css'
-import { testsData } from '../../data/Tests-list';
 import TestsData  from './services/testsData';
 
 
@@ -42,12 +41,14 @@ const [tests,setTests]= useState(testsData)
 
   const onDelete= useCallback(async(id)=>{
     debugger
-    const data= await TestsData.deleteTestData(id)
-      setTests(data)
-    // setTests((current)=>{
-    //   return current.filter(tests=>tests.id!==id)
-    // }
-    // )
+    const testsData= await TestsData.deleteTestData(id)
+    const data= [...tests]
+    for(let i=0; i<data.length;i++){
+      if(data[i].id==id){
+        data.splice(i,1)
+      }
+  }
+setTests(data)
   },[tests]);
 
 

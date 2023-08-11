@@ -17,6 +17,7 @@ import AddNewApp from "./views/Employee/Employee-book-appointment";
 import ComponentsOverview from "./views/Employee/Emplyee-appointment-history";
 import Tables from "./views/Employee/Search";
 import ViewTests from "./views/Employee/ViewTests";
+import TestDetails from "./views/Employee/tests-in-detail";
 
 export default [
   {
@@ -90,5 +91,10 @@ export default [
     path: "/viewTests",
     layout: DefaultLayout,
     component: ViewTests
+  },
+  {
+    path:'/test/:testid',
+    layout:DefaultLayout,
+    component:TestDetails
   }
 ];

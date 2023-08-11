@@ -24,12 +24,11 @@ const [price,setPrice]= useState()
       desc:des,
       price:price
     }
-const tests= await TestsData.addText(data)
-    console.log(testsData);
+    const tests= await TestsData.addText(data)
     navigate('/ManageTests')
   };
 
-  return (
+  return(
     <div>
       <Card large className="mb-3">
       <CardBody>

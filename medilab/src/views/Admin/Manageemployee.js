@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useCallback,useState } from 'react'
 import { Card, CardBody } from "shards-react";
 import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col,Button,ButtonGroup } from "shards-react"
 import './ManageTests.css'
 import { employeeList } from '../../data/Employee-list';
+import TestsData  from './services/testsData';
 
 
 function Manageemployee() {
@@ -18,14 +19,14 @@ function Manageemployee() {
         <td>{user.email}</td>
         <td><ButtonGroup size="sm">
 
-               <Button theme="white">
+               <Button outline theme="danger">
                  <span className="text-danger" onClick={()=>Delete(user.id)}>
                    <i className="material-icons">delete_forever</i>
                  </span>{" "}
                  Delete
                </Button>
-               <Button theme="white">
-                 <span className="text-light">
+               <Button outline theme="info">
+                 <span className="text-primary">
                    <i className="material-icons">more_vert</i>
                  </span>{" "}
                  Edit
@@ -35,12 +36,11 @@ function Manageemployee() {
     </tr>
   ));
 
-  const Delete=(id)=>{
-    setUsers((current)=>{
-      return current.filter((users)=>users.id!==id)
-    }
-    )
-  };
+  const Delete= useCallback(async(id)=>{
+    debugger
+    const data= await TestsData.deleteEmpData(id)
+      setUsers(data)
+  },[users]);
 
   return (
     <div>

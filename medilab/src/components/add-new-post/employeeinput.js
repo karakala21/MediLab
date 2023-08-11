@@ -1,9 +1,12 @@
-import React from 'react'
+import {React,useState} from 'react'
 import { Card, CardBody, Form } from "shards-react";
 import "../add-new-post/TestInput.css"
+import { employeeList } from '../../data/Employee-list';
+import TestsData from '../../views/Admin/services/testsData';
+import {useNavigate} from 'react-router-dom'
 
-function EmployeeInput() {
-  return (
+function EmployeeInput(){
+  return(
     <div>
       <Card large className="mb-3">
       <CardBody>
@@ -16,10 +19,10 @@ function EmployeeInput() {
         <label className='label'>Employee_password: </label><input type='text' placeholder='xxxxxxx' className='Title' style={{marginLeft:'-4%'}}/><br/>
         <center><button className='button'>save</button></center>
       </Form>
-    </CardBody>
-    </Card>
+      </CardBody>
+      </Card>
     </div>
-  )
+  );
 }
 
 export default EmployeeInput

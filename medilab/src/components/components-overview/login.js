@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Card } from 'shards-react'
 import { TextField, Button } from '@mui/material';
 import Alert from '@mui/material/Alert';
+import { employeeList } from '../../data/Employee-list';
 
 export default function Login() {
   debugger
@@ -13,6 +14,7 @@ export default function Login() {
   const [error, setError] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = React.useState(localStorage.getItem("isAuthenticated"))
   const [user,setUser]=useState(localStorage.getItem('user'))
+  const [users,setUsers]=useState(employeeList)
 
   const login = () => {
     if (email === "admin@gmail.com" && password === "admin123") {
@@ -20,7 +22,11 @@ export default function Login() {
       setIsAuthenticated(localStorage.setItem("isAuthenticated", 1))
       setUser(localStorage.setItem('user','admin'))
       navigate('/AdminDashboard')
-    }else if (email === "emp" && password === "emp") {
+    }else if (
+      users.map((user)=>(
+        email === user.id && password === user.password
+        ))
+      ) {
       localStorage.setItem("isAuthenticated", 1)
       setIsAuthenticated(localStorage.setItem("isAuthenticated", 1))
       setUser(localStorage.setItem('user','emp'))
