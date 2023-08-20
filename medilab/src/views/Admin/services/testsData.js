@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { testsData } from '../../../data/Tests-list'
 import { employeeList } from '../../../data/Employee-list'
+import { appData } from '../../../components/add-new-post/AppointmentData'
 
 
 let data= testsData
 let data1=employeeList
+let data2=appData
 
 export class TestsData extends Component {
 
@@ -13,6 +15,9 @@ export class TestsData extends Component {
   }
   static getTestsData(){
     return data
+  }
+  static getAppData(){
+    return data2
   }
 
 static async addText(testdata){
@@ -24,6 +29,12 @@ static async addemp(empdata){
   data1.push(empdata)
   return data1
 }
+
+static async addData(formData){
+data2.push(formData)
+    return data2
+}
+
 
 
 static async deleteTestData(id){

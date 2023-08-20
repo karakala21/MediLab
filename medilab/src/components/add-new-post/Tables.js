@@ -22,7 +22,6 @@ function ViewTests() {
     <div>
     <Container fluid className="main-content-container " >
     <Row>
-      {/* Editor */}
       <Col lg="11 " md="12" xs='12'>
         <Card large className="mb-3">
             <CardBody>

@@ -14,7 +14,8 @@ import ManageTests from "./views/Admin/ManageTests";
 import employeeDashboard from "./views/Employee/EmployeeDashboard";
 import UserProfileLite from "./views/Employee/ViewMedicalReport";
 import AddNewApp from "./views/Employee/Employee-book-appointment";
-import ComponentsOverview from "./views/Employee/Emplyee-appointment-history";
+//import ComponentsOverview from "./views/Employee/Emplyee-appointment-history";
+import AppointmentHistory from "./views/Employee/Emplyee-appointment-history";
 import Tables from "./views/Employee/Search";
 import ViewTests from "./views/Employee/ViewTests";
 import TestDetails from "./views/Employee/tests-in-detail";
@@ -80,7 +81,7 @@ export default [
   {
     path: "/employee-appointment-history",
     layout: DefaultLayout,
-    component: ComponentsOverview
+    component: AppointmentHistory
   },
   {
     path: "/patient-list",

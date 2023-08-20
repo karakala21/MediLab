@@ -8,7 +8,6 @@ import TestsData  from './services/testsData';
 
 
 function ManageTests() {
-  //debugger
 
 
 const testsData =  TestsData.getTestsData()

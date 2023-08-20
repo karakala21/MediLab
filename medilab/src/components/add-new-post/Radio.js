@@ -43,21 +43,8 @@ export default class Radio extends React.Component {
           >
             Male
           </FormRadio>
-          {/* <FormRadio
-            inline
-            name="sport"
-            checked={this.state.selectedSport === "tennis"}
-            onChange={() => {
-              this.changeSport("tennis");
-            }}
-          >
-            Tennis
-          </FormRadio> */}
+        
         </div>
-        {/* <span>
-          <strong>Selected sport:</strong>{" "}
-          <span>{this.state.selectedSport || "none"}</span>
-        </span> */}
       </div>
     );
   }

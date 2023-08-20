@@ -25,7 +25,7 @@ const tdStyle = {
 
 const TestDetails = () => {
   const testId = localStorage.getItem('id');
-  const testDetails= testsData[testId];
+  const testDetails= testsData[testId-1];
 
   if (!testDetails) {
     return <div>Loading...</div>;
