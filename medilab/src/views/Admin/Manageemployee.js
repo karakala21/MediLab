@@ -3,12 +3,12 @@ import { Card, CardBody } from "shards-react";
 import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col,Button,ButtonGroup } from "shards-react"
 import './ManageTests.css'
-import { employeeList } from '../../data/Employee-list';
 import TestsData  from './services/testsData';
 
 
 function Manageemployee() {
-  const [users,setUsers]=useState(employeeList);
+  const empData =  TestsData.getEmpData()
+  const [users,setUsers]=useState(empData);
 
   let data=users.map((user,index)=>(
     <tr key={user.id}>
@@ -19,13 +19,13 @@ function Manageemployee() {
         <td>{user.email}</td>
         <td><ButtonGroup size="sm">
 
-               <Button outline theme="danger">
-                 <span className="text-danger" onClick={()=>Delete(user.id)}>
+               <Button outline theme="danger"  onClick={()=>Delete(user.id)}>
+                 <span className="text-danger">
                    <i className="material-icons">delete_forever</i>
                  </span>{" "}
                  Delete
                </Button>
-               <Button outline theme="info">
+               <Button outline theme="info" onClick={() => handleLinkClick(user.id,index)}>
                  <span className="text-primary">
                    <i className="material-icons">more_vert</i>
                  </span>{" "}
@@ -38,9 +38,20 @@ function Manageemployee() {
 
   const Delete= useCallback(async(id)=>{
     debugger
-    const data= await TestsData.deleteEmpData(id)
-      setUsers(data)
+    const empData= await TestsData.deleteEmpData(id)
+    const data= [...users]
+    for(let i=0; i<data.length;i++){
+      if(data[i].id==id){
+        data.splice(i,1)
+      }
+    }
+    setUsers(data)
   },[users]);
+
+  const handleLinkClick=(userId,index)=>{
+    localStorage.setItem('empid',userId)
+    window.location.href = `/emp/${index+1}`;
+  }
 
   return (
     <div>

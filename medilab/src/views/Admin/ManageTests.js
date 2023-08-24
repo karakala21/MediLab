@@ -8,8 +8,7 @@ import TestsData  from './services/testsData';
 
 
 function ManageTests() {
-
-
+  
 const testsData =  TestsData.getTestsData()
 const [tests,setTests]= useState(testsData)
 
@@ -27,7 +26,7 @@ const [tests,setTests]= useState(testsData)
                  </span>{" "}
                  Delete
                </Button>
-               <Button outline pill theme="info">
+               <Button outline pill theme="info"  onClick={() => handleLinkClick(index,test.id)} active=''>
                  <span className="text-primary">
                    <i className="material-icons">more_vert</i>
                  </span>{" "}
@@ -39,7 +38,6 @@ const [tests,setTests]= useState(testsData)
   ));
 
   const onDelete= useCallback(async(id)=>{
-    debugger
     const testsData= await TestsData.deleteTestData(id)
     const data= [...tests]
     for(let i=0; i<data.length;i++){
@@ -49,6 +47,11 @@ const [tests,setTests]= useState(testsData)
   }
 setTests(data)
   },[tests]);
+
+  const handleLinkClick=(index,testId)=>{
+    localStorage.setItem('testid',testId)
+    window.location.href = `/edit-test/${index+1}`;
+  }
 
 
   return (

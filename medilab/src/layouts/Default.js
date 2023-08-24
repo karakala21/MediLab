@@ -31,7 +31,7 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => {
     </Row>
   </Container>
   );
-  }else if(user=='emp'){
+  }else if(user==='emp'){
     return(
       <Container fluid>
       <Row>

@@ -19,6 +19,8 @@ import AppointmentHistory from "./views/Employee/Emplyee-appointment-history";
 import Tables from "./views/Employee/Search";
 import ViewTests from "./views/Employee/ViewTests";
 import TestDetails from "./views/Employee/tests-in-detail";
+import Editemployee from "./views/Admin/Editemployee";
+import EditTestDetails from "./views/Admin/EditTests";
 
 export default [
   {
@@ -56,6 +58,16 @@ export default [
     path: "/ManageTests",
     layout: DefaultLayout,
     component: ManageTests
+  },
+  {
+    path: "/emp/:empid",
+    layout: DefaultLayout,
+    component:Editemployee
+  },
+  {
+    path:'/edit-test/:testid',
+    layout:DefaultLayout,
+    component:EditTestDetails
   },
   {
     path: "/employee",

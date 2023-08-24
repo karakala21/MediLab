@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardBody, Form, FormGroup, FormInput } from "shards-react";
 import TestsData from "../../views/Admin/services/testsData";
 import Tables from "./Tables";
-import { appData } from "./AppointmentData";
 import {
   FormControl,
   FormLabel,
@@ -16,7 +15,7 @@ import {
 
 
 function AppintmentInput() {
-  
+
   const navigate = useNavigate()
 const [name,setName]=useState('')
 const [gender,setGender]=useState('')
@@ -108,7 +107,7 @@ const [stest,setStest]=useState('')
           </Form>
         </CardBody>
       </Card>
-      
+
     </div>
   );
 }

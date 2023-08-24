@@ -54,7 +54,7 @@ export default class UserActions extends React.Component {
           </DropdownItem>
           <DropdownItem divider />
           <DropdownItem tag={Link} to="/" className="text-danger" onClick={this.logout}>
-            <a href="" class="text-danger" style={{textDecoration:"none",fontWeight:"normal"}}><i className="material-icons text-danger">&#xE879;</i> Logout</a>
+            <a class="text-danger" style={{textDecoration:"none",fontWeight:"normal"}}><i className="material-icons text-danger">&#xE879;</i> Logout</a>
           </DropdownItem>
         </Collapse>
       </NavItem>

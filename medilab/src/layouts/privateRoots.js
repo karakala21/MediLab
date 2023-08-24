@@ -1,6 +1,5 @@
 import React from 'react'
-import {Route,Navigate,Routes as Switch} from "react-router-dom"
-import Routes from '../routes';
+import {Navigate} from "react-router-dom"
 export default function PrivateRoots({children,...rest}) {
     debugger
     const [isAuthenticated,setIsAuthenticated] = React.useState(localStorage.getItem("isAuthenticated"))

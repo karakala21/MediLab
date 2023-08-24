@@ -2,13 +2,13 @@ export const testsData=[
   {
     id:1,
     title:'Blood Sugar Test',
-    desc:'Calcium Test is performed to measure the total amount of calcium present in your system. It is the sum of calcium content measured at different levels and areas of your body',
+    desc:'Blood Sugar test is useful to measure levels of glucose present in blood at any given time. A venous blood sample is required to perform this test.',
     price:60
   },
   {
     id:2,
     title:'Calcium Test',
-    desc:'Blood Sugar test is useful to measure levels of glucose present in blood at any given time. A venous blood sample is required to perform this test.',
+    desc:'Calcium Test is performed to measure the total amount of calcium present in your system. It is the sum of calcium content measured at different levels and areas of your body',
     price:130
   },
   {

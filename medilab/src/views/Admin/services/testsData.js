@@ -10,14 +10,14 @@ let data2=appData
 
 export class TestsData extends Component {
 
-  static getTestsData2(){
-    return [data.id,data.title,data.price,'view']
-  }
   static getTestsData(){
     return data
   }
   static getAppData(){
     return data2
+  }
+  static getEmpData(){
+    return data1
   }
 
 static async addText(testdata){
@@ -35,6 +35,42 @@ data2.push(formData)
     return data2
 }
 
+static async editemp(empdata,empId){
+
+  const newState = data1.map(obj => {
+    if (obj.id === empId) {
+      return {...obj,
+        name:empdata.name,
+        phone:empdata.phone,
+        email:empdata.email,
+        password:empdata.pass
+      };
+    }
+
+    return obj;
+  });
+
+  return newState
+
+}
+
+static async edittest(testdata,testId){
+
+  const newState = data.map(obj => {
+    if (obj.id === testId) {
+      return {...obj,
+        title:testdata.title,
+        desc:testdata.desc,
+        price:testdata.price
+      };
+    }
+
+    return obj;
+  });
+
+  return newState
+
+}
 
 
 static async deleteTestData(id){

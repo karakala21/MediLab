@@ -4,7 +4,7 @@ import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col } from "shards-react"
 import '../Admin/ManageTests.css'
 import { testsData } from '../../data/Tests-list';
-import Colors from '../../components/components-overview/Colors';
+
 
 function ViewTests() {
   const [tests,setTests]=useState(testsData);

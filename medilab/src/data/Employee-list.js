@@ -5,6 +5,7 @@ export var employeeList= [
     name:'Ajay',
     phone:9014404336,
     email:'ajayprofessional119@gmail.com',
+    add:'srikakulam',
     password:'password1'
   },
   {
@@ -13,6 +14,7 @@ export var employeeList= [
     name:'Saketh',
     phone:8453547434,
     email:'saketh@gmail.com',
+    add:'Narasaraopet',
     password:'password2'
   },
   {
@@ -21,6 +23,7 @@ export var employeeList= [
     name:'Latha Sri',
     phone:8453547565,
     email:'lathasri@gmail.com',
+    add:'Narasaraopet',
     password:'password3'
   },
   {
@@ -29,6 +32,7 @@ export var employeeList= [
     name:'Satya Sri',
     phone:8453547344,
     email:'Satyasri@gmail.com',
+    add:'',
     password:'password4'
   },
   {
@@ -37,6 +41,7 @@ export var employeeList= [
     name:'Jittu',
     phone:8453547843,
     email:'jittu@gmail.com',
+    add:'',
     password:'password5'
   },
   {
@@ -45,6 +50,7 @@ export var employeeList= [
     name:'Gangadhar',
     phone:8453547434,
     email:'gangadharpalla11@gmail.com',
+    add:'Anakapalli',
     password:'password6'
   },
   {
@@ -53,6 +59,7 @@ export var employeeList= [
     name:'Aneesh',
     phone:8453547434,
     email:'aneesh@gmail.com',
+    add:'vijayanagaram',
     password:'password7'
   },
   {
@@ -61,6 +68,7 @@ export var employeeList= [
     name:'Poojitha',
     phone:8453547434,
     email:'poojitha@gmail.com',
+    add:'Narasaraopet',
     password:'password8'
   }
 ];

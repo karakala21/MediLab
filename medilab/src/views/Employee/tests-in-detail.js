@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { testsData } from '../../data/Tests-list';
 
 
@@ -33,7 +33,7 @@ const TestDetails = () => {
 
   return (
     <div className='card' style={{marginTop:"20px",marginBottom:"400px",padding:"20px", marginLeft:"20px",marginRight:"20px"}}>
-      <Link to={'/viewTests'} onClick={localStorage.removeItem('id')}>..back</Link><br/>  
+      <Link to={'/viewTests'} onClick={localStorage.removeItem('id')}>..back</Link><br/>
       <h3>Test Details</h3>
       <table style={tableStyle}>
         <tbody>

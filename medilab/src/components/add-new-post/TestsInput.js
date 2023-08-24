@@ -13,11 +13,6 @@ const [des,setDes]=useState('')
 const [price,setPrice]= useState()
 
   const savedata=async()=>{
-    //debugger
-    /*const titles=document.getElementById('title').value;
-    const descs=document.getElementsByClassName('textarea').value;
-    const prices=document.getElementById('price').value;
-    console.log(titles)*/
     const data={
       id:testsData.length+1,
       title:title,
