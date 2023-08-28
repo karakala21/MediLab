@@ -25,8 +25,8 @@ const [appData1,setappData1]= useState(app1Data)
         <td>{i.mail}</td>
         <td>{i.appointment}</td>
         <td>{i.time}</td>
-        <td>{i.presc}</td>
         <td>{i.selectTest}</td>
+        
     </tr>
   ));
 
@@ -53,8 +53,8 @@ const [appData1,setappData1]= useState(app1Data)
                 <th>Mail</th>
                 <th>Appointment Date</th>
                 <th>Appointment Time</th>
-                <th>Prescription</th>
                 <th>Selected Tests</th>
+                
               </tr>
                 {data}
               </table>

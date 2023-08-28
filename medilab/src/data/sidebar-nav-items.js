@@ -21,15 +21,6 @@ export default function() {
       htmlBefore: '<i class="material-icons">description</i>',
       to: "/employee-appointment-history",
     },
-    {
-      title: "Search",
-      htmlBefore: '<i class="material-icons">search</i>',
-      to: "/patient-list",
-    },
-    {
-      title: "View medical Reports",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/view-medical-reports",
-    }
+   
   ];
 }

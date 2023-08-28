@@ -4,6 +4,7 @@ import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col,Button,ButtonGroup } from "shards-react"
 import './ManageTests.css'
 import TestsData  from './services/testsData';
+import EditTestForm from './services/EditTestForm';
 
 
 
@@ -11,6 +12,17 @@ function ManageTests() {
   
 const testsData =  TestsData.getTestsData()
 const [tests,setTests]= useState(testsData)
+const [editingTestId, setEditingTestId] = useState(null);
+
+const handleEditClick = (id) => {
+  setEditingTestId(id);
+};
+
+const handleEditSubmit = async (id, updatedTestData) => {
+  const updatedTests = await TestsData.editTestData(id, updatedTestData);
+  setTests(updatedTests);
+  setEditingTestId(null);
+};
 
   let data=tests.map((test,index)=>(
     <tr key={test.id}>
@@ -26,7 +38,8 @@ const [tests,setTests]= useState(testsData)
                  </span>{" "}
                  Delete
                </Button>
-               <Button outline pill theme="info"  onClick={() => handleLinkClick(index,test.id)} active=''>
+
+               <Button outline pill theme="info" onClick={() => handleEditClick(test.id)}>
                  <span className="text-primary">
                    <i className="material-icons">more_vert</i>
                  </span>{" "}
@@ -79,6 +92,14 @@ setTests(data)
               </table>
           </CardBody>
           </Card>
+          {
+            editingTestId && (
+              <EditTestForm
+                test={tests.find((test) => test.id === editingTestId)}
+                onSubmit={handleEditSubmit}
+              />
+            )
+          }
       </Col>
     </Row>
     </Container>

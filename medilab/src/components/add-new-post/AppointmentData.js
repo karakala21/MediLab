@@ -1,3 +1,38 @@
 export const appData=[
-    
+    {
+        id:1,
+        name:"Sia",
+        gender:"female",
+        dob:"12-10-2000",
+        mobile:9492935123,
+        mail:"sia@gmail.com",
+        appointment:"17-08-2023",
+        time:"12:30",
+        selectTest:"ECG",
+        status: "pending",
+    },
+    {
+        id:2,
+        name:"Ria",
+        gender:"female",
+        dob:"12-12-2005",
+        mobile:9492935124,
+        mail:"ria@gmail.com",
+        appointment:"20-08-2023",
+        time:"18:30",
+        selectTest:"Iron Test",
+        status: "pending",
+    },
+    {
+        id:3,
+        name:"Ram",
+        gender:"male",
+        dob:"12-10-2007",
+        mobile:9492935743,
+        mail:"ram@gmail.com",
+        appointment:"17-07-2023",
+        time:"14:30",
+        selectTest:"Calcium Test",
+        status: "pending",
+    }
 ];

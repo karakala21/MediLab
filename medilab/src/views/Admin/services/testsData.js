@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { testsData } from '../../../data/Tests-list'
 import { employeeList } from '../../../data/Employee-list'
 import { appData } from '../../../components/add-new-post/AppointmentData'
+import { passupdate } from '../../../components/add-new-post/PassUpdate'
 
 
 let data= testsData
 let data1=employeeList
 let data2=appData
+let data3=passupdate
 
 export class TestsData extends Component {
 
@@ -16,8 +18,12 @@ export class TestsData extends Component {
   static getAppData(){
     return data2
   }
+
   static getEmpData(){
     return data1
+  }
+  static getpassData(){
+    return data3
   }
 
 static async addText(testdata){
@@ -35,6 +41,12 @@ data2.push(formData)
     return data2
 }
 
+
+
+static async addPass(confirm){
+  data3.push(confirm)
+      return data3
+  }
 static async editemp(empdata,empId){
 
   const newState = data1.map(obj => {
@@ -92,6 +104,28 @@ static async deleteEmpData(id){
   }
   return data1
   }
+
+
+  static async editEmpData(id, updatedEmployeeData) {
+    const employeeIndex = data1.findIndex(employee => employee.id === id);
+    if (employeeIndex !== -1) {
+      data1[employeeIndex] = { ...data1[employeeIndex], ...updatedEmployeeData };
+    }
+    return data1;
+  }
+
+
+  static async editTestData(id, updatedTestData) {
+    const testIndex = testsData.findIndex(test => test.id === id);
+    if (testIndex !== -1) {
+      testsData[testIndex] = { ...testsData[testIndex], ...updatedTestData };
+    }
+    return testsData;
+  }
+
+
 }
+
+
 
 export default TestsData

@@ -21,6 +21,9 @@ import ViewTests from "./views/Employee/ViewTests";
 import TestDetails from "./views/Employee/tests-in-detail";
 import Editemployee from "./views/Admin/Editemployee";
 import EditTestDetails from "./views/Admin/EditTests";
+import StatusAction from "./views/Admin/services/StatusAction";
+import UserAccountDetails from "./components/user-profile-lite/UserAccountDetails";
+import UpdatePassword from "./views/Admin/UpdatePassword";
 
 export default [
   {
@@ -106,8 +109,24 @@ export default [
     component: ViewTests
   },
   {
+    path: "/StatusActions",
+    layout: DefaultLayout,
+    component: StatusAction
+  },
+  {
     path:'/test/:testid',
     layout:DefaultLayout,
     component:TestDetails
-  }
+  },
+  {
+    path: "/user-profile-lite",
+    layout: DefaultLayout,
+    component:UserAccountDetails
+  },
+  {
+    path: "/UpdatePassword",
+    layout: DefaultLayout,
+    component:UpdatePassword
+  },
+  
 ];

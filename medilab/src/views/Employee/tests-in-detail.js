@@ -33,7 +33,7 @@ const TestDetails = () => {
 
   return (
     <div className='card' style={{marginTop:"20px",marginBottom:"400px",padding:"20px", marginLeft:"20px",marginRight:"20px"}}>
-      <Link to={'/viewTests'} onClick={localStorage.removeItem('id')}>..back</Link><br/>
+      <Link to={'/viewTests'} onClick={localStorage.removeItem('id')}><button style={{backgroundColor:"blue",color:"#FFF", border:"none",paddingLeft:"6px",paddingRight:"6px",margin:"2px", cursor:"pointer"}}>Back</button></Link><br/>  
       <h3>Test Details</h3>
       <table style={tableStyle}>
         <tbody>

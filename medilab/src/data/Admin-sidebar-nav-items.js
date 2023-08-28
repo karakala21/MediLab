@@ -17,6 +17,11 @@ export default function() {
       to: "/add-new-Test",
     },
     {
+      title: "Appointments",
+      htmlBefore: '<i class="material-icons">note_add</i>',
+      to: "/StatusActions",
+    },
+    {
       title: "Manage Employee",
       htmlBefore: '<i class="material-icons">group</i>',
       to: "/manage-employee",
@@ -25,11 +30,6 @@ export default function() {
       title: "Add Empolyee",
       htmlBefore: '<i class="material-icons">person_add</i>',
       to: "/add-employee",
-    },
-    {
-      title: "User Profile",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/admin-user-profile-lite",
     },
   ];
 }

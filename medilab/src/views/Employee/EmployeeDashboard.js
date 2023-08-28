@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row,} from "shards-react";
 import PageTitle from "../../components/common/PageTitle";
 import './Dashboard.css';
+import { Link } from 'react-router-dom';
+import ViewTests from "./ViewTests";
 
 const employeeDashboard = () => (
   <Container fluid className="main-content-container px-4">
@@ -11,18 +13,16 @@ const employeeDashboard = () => (
     </Row>
 
     {/* Small Stats Blocks */}
-    <div id="layout">
+    <div id="layout" style={{marginLeft:"200px"}}>
      <div className="cardlayout">
       <div className="cardcontent">
         <a className="title" id="card1" href="/employee-book-appointment"><div>
           Book Appointment
         </div></a>
-        <a className="title" id="card2" href="/viewTests"><div>
+        
+        <Link className="title" id="card2" to="/ViewTests"><div>
         View Test Details
-        </div></a>
-        <a className="title" id="card3" href="/view-medical-reports"><div>
-        Download Reports
-        </div></a>
+          </div></Link>
       </div>
      </div>
     </div>

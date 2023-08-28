@@ -4,11 +4,24 @@ import PageTitle from "../../components/common/PageTitle"
 import { Container, Row, Col,Button,ButtonGroup } from "shards-react"
 import './ManageTests.css'
 import TestsData  from './services/testsData';
-
+import EditEmployeeForm from './services/EditEmployeeForm';
 
 function Manageemployee() {
+
   const empData =  TestsData.getEmpData()
+
   const [users,setUsers]=useState(empData);
+  const [editingEmployeeId, setEditingEmployeeId] = useState(null);
+
+  const handleEditClick = (id) => {
+    setEditingEmployeeId(id);
+  };
+
+  const handleEditSubmit = async (id, updatedEmployeeData) => {
+    const updatedUsers = await TestsData.editEmpData(id, updatedEmployeeData);
+    setUsers(updatedUsers);
+    setEditingEmployeeId(null);
+  };
 
   let data=users.map((user,index)=>(
     <tr key={user.id}>
@@ -19,13 +32,16 @@ function Manageemployee() {
         <td>{user.email}</td>
         <td><ButtonGroup size="sm">
 
-               <Button outline theme="danger"  onClick={()=>Delete(user.id)}>
+          
+               <Button outline theme="danger" onClick={()=>Delete(user.id)} active=''>
                  <span className="text-danger">
                    <i className="material-icons">delete_forever</i>
                  </span>{" "}
                  Delete
                </Button>
-               <Button outline theme="info" onClick={() => handleLinkClick(user.id,index)}>
+   
+
+               <Button outline theme="info" onClick={() => handleEditClick(user.id)}>
                  <span className="text-primary">
                    <i className="material-icons">more_vert</i>
                  </span>{" "}
@@ -38,7 +54,7 @@ function Manageemployee() {
 
   const Delete= useCallback(async(id)=>{
     debugger
-    const empData= await TestsData.deleteEmpData(id)
+    const Empdata= await TestsData.deleteEmpData(id)
     const data= [...users]
     for(let i=0; i<data.length;i++){
       if(data[i].id==id){
@@ -48,10 +64,6 @@ function Manageemployee() {
     setUsers(data)
   },[users]);
 
-  const handleLinkClick=(userId,index)=>{
-    localStorage.setItem('empid',userId)
-    window.location.href = `/emp/${index+1}`;
-  }
 
   return (
     <div>
@@ -69,16 +81,22 @@ function Manageemployee() {
               <table>
               <tr>
                 <th>S.No</th>
-                <th>Employee_id</th>
-                <th>Employee_name</th>
-                <th>Employee_phone</th>
-                <th>Employee_email</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Mail</th>
                 <th>Action</th>
               </tr>
                 {data}
               </table>
           </CardBody>
           </Card>
+          {editingEmployeeId && (
+                  <EditEmployeeForm
+                    employee={users.find(user => user.id === editingEmployeeId)}
+                    onSubmit={handleEditSubmit}
+                  />
+                )}
       </Col>
     </Row>
     </Container>
