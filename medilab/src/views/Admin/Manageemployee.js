@@ -61,6 +61,7 @@ function Manageemployee() {
         data.splice(i,1)
       }
     }
+    alert("Employee deleted successfully")
     setUsers(data)
   },[users]);
 

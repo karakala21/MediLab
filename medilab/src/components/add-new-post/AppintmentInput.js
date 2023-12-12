@@ -25,7 +25,7 @@ function AppintmentInput() {
   const [time, setTime] = useState("");
   const [presc, setPresc] = useState("");
   const [selectedTests, setSelectedTests] = useState([]); // Store selected tests here
-
+  const [msg, setMsg] = useState("");
   const handleCheckboxChange = (test, isChecked) => {
     if (isChecked) {
       setSelectedTests([...selectedTests, test]);
@@ -51,14 +51,25 @@ function AppintmentInput() {
       status: "pending",
     };
     const test1 = await TestsData.addData(Formdata);
+    
+    
+
     navigate("/employee-appointment-history");
   };
-
+  const handleMobile= async (e) => {
+    e.preventDefault();
+    if(mobile.length !== 10 ){
+      setMsg("Mobile number should contain 10 digits!")
+    }
+    else{
+      handleSubmit();
+    }
+  }
   return (
     <div>
       <Card large className="mb-3">
         <CardBody>
-          <Form className="add-new-post" onSubmit={handleSubmit}>
+          <Form className="add-new-post" onSubmit={handleMobile}>
             <div>
               <FormGroup>
                 <label htmlFor="username">Patient Name<span style={{color:"red"}}>*</span></label>
@@ -107,9 +118,13 @@ function AppintmentInput() {
                   id="mobileno"
                   placeholder=""
                   required
+                  type="number"
                   onChange={e => setMobile(e.target.value)}
                 />
+              
               </FormGroup>
+              <p style={{color:"red", margin:"5px"}}>{msg}</p>
+              
               <FormGroup>
                 <label htmlFor="emailId">Email ID<span style={{color:"red"}}>*</span></label>
                 <FormInput
@@ -191,7 +206,7 @@ function AppintmentInput() {
                 </Row>
               </Container>
             </div>
-            <center><button type="submit" style={{backgroundColor:"green",borderRadius:"5px",color:"#FFF", border:"none",padding:"10px",margin:"5px", cursor:"pointer"}}>Submit</button></center>
+            <center><button type="submit"  style={{backgroundColor:"green",borderRadius:"5px",color:"#FFF", border:"none",padding:"10px",margin:"5px", cursor:"pointer"}}>Submit</button></center>
           </Form>
         </CardBody>
       </Card>

@@ -18,6 +18,7 @@ function EditEmployeeForm({ employee, onSubmit }) {
   };
 
   const handleSubmit = (event) => {
+    alert("Employee details edited successfully")
     event.preventDefault();
     onSubmit(employee.id, editedEmployee);
   };

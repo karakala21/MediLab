@@ -18,6 +18,7 @@ function EditTestForm({ test, onSubmit }) {
   };
 
   const handleSubmit = (event) => {
+    alert("Test details Edited Successfully");
     event.preventDefault();
     onSubmit(test.id, editedTest);
   };

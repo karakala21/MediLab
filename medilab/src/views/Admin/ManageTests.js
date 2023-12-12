@@ -58,6 +58,7 @@ const handleEditSubmit = async (id, updatedTestData) => {
         data.splice(i,1)
       }
   }
+  alert("Test deleted successfully");
 setTests(data)
   },[tests]);
 

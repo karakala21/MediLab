@@ -13,6 +13,7 @@ const [des,setDes]=useState('')
 const [price,setPrice]= useState()
 
   const savedata=async()=>{
+    alert("New test added successfully");
     const data={
       id:testsData.length+1,
       title:title,
@@ -28,9 +29,9 @@ const [price,setPrice]= useState()
       <Card large className="mb-3">
       <CardBody>
       <Form className="add-new-post">
-        <label className='label'>Test Title: </label><input type='text' placeholder='Title' className='Title' id="title" onChange={(e)=>setTitle(e.target.value)}/><br/>
-        <label className='label'>Test Description: </label><br/><textarea className='textarea' rows={7} placeholder='Test Description'  onChange={(e)=>setDes(e.target.value)}></textarea><br/>
-        <label className='label'>Price: </label><input type='number' placeholder='1500' className='Title' style={{marginLeft:'2%'}} id="price"  onChange={(e)=>setPrice(e.target.value)}/><br/>
+        <label className='label'>Test Title: </label><input type='text' placeholder='Title' className='Title' id="title" style={{marginLeft:'2%'}} onChange={(e)=>setTitle(e.target.value)}/><br/>
+        <label className='label'>Test Description: </label><br/><textarea className='textarea' rows={7} placeholder='Test Description'  style={{marginLeft:"15%"}}onChange={(e)=>setDes(e.target.value)}></textarea><br/>
+        <label className='label'>Price: </label><input type='number' placeholder='1500' className='Title' style={{marginLeft:'4%'}} id="price"  onChange={(e)=>setPrice(e.target.value)}/><br/>
         <center><button className='button' onClick={savedata}>save</button></center>
       </Form>
     </CardBody>
